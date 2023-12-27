@@ -19,4 +19,24 @@ public class ToastWithDurationPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+      @PluginMethod
+    public void show(PluginCall call) {
+        String text = call.getString("text");
+        if (text == null) {
+            call.reject("Must provide text");
+            return;
+        }
+
+        String durationType = call.getString("duration", "short");
+
+        int duration = android.widget.Toast.LENGTH_SHORT;
+        if ("long".equals(durationType)) {
+            duration = android.widget.Toast.LENGTH_LONG;
+        }
+        String position = call.getString("position", "bottom");
+        ToastWithDuration.show(getContext(), text, duration, position);
+
+        call.resolve();
+    }
 }
