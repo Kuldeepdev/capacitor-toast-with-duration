@@ -20,11 +20,100 @@
         "docs": "",
         "complexTypes": [],
         "slug": "echo"
+      },
+      {
+        "name": "show",
+        "signature": "(options: ShowOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "ShowOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Shows a Toast on the screen",
+        "complexTypes": [
+          "ShowOptions"
+        ],
+        "slug": "show"
       }
     ],
     "properties": []
   },
-  "interfaces": [],
+  "interfaces": [
+    {
+      "name": "ShowOptions",
+      "slug": "showoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "text",
+          "tags": [
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Text to display on the Toast",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "tags": [
+            {
+              "text": "'short'",
+              "name": "default"
+            },
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Duration of the Toast, either 'short' (2000ms) or 'long' (3500ms)",
+          "complexTypes": [],
+          "type": "'short' | 'long' | undefined"
+        },
+        {
+          "name": "durationMilliseconds",
+          "tags": [
+            {
+              "text": "6.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Duration of the Toast in milliseconds.\n\nThis option is only supported on iOS and Web.",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "position",
+          "tags": [
+            {
+              "text": "'bottom'",
+              "name": "default"
+            },
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Position of the Toast.\n\nOn Android 12 and newer all toasts are shown at the bottom.",
+          "complexTypes": [],
+          "type": "'top' | 'center' | 'bottom' | undefined"
+        }
+      ]
+    }
+  ],
   "enums": [],
   "typeAliases": [],
   "pluginConfigs": []
